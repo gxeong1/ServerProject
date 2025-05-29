@@ -1,0 +1,50 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .main-icon {
+    width: 250px;
+    height: 250px;
+    object-fit: cover; 
+  }
+  
+  .btn-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px; 
+  }
+  
+  .login-btn,
+  .guest-btn {
+    width: 357px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    color: #ffffff;
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: -0.05em;
+  
+    border-radius: 20px;
+    border: 3px solid var(--Stroke, #80C5DA);
+    background: var(--Main, #9CD9EC);
+    cursor: pointer;
+  }
+  
+  .login-btn:hover,
+  .guest-btn:hover {
+    background: #80c5da;
+    border: 3px solid var(--Stroke, #80C5DA);
+  }
+  
