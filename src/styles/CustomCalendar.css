@@ -1,0 +1,150 @@
+.calendar-container {
+    max-width: 800px;
+    height: 832px;
+    margin: 0 auto;
+    padding: 1rem;
+    background: var(--Bg, #FDFEFF);
+    color: #fff;
+  }
+  
+  .react-calendar {
+    background: transparent;
+    border: none;
+    font-family: 'Pretendard', sans-serif;
+  }
+  
+  .react-calendar__tile {
+    background: transparent;
+    color: black;
+    border: 0.2px solid #CACBCC;
+    border-radius: 0;
+    padding: 1rem;
+    margin: 0;
+    position: relative;
+    width: 20px;
+    height: 80px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    box-sizing: border-box;
+    outline: none; 
+  }
+  
+  .react-calendar__month-view__days > .react-calendar__tile:nth-child(-n+7) {
+    border-top: none;
+  }
+  
+  .react-calendar__month-view__days > .react-calendar__tile:nth-child(7n+1) {
+    border-left: none;
+  }
+
+  .react-calendar__month-view__days > .react-calendar__tile:nth-child(7n) {
+    border-right: none;
+  }
+
+  .react-calendar__month-view__days > .react-calendar__tile:nth-child(n+36) {
+    border-bottom: none;
+  }
+  
+
+  /* 마우스 오버 시 효과 제거 */
+  .react-calendar__tile:hover {
+    background: transparent;
+    border: 0.2px solid #CACBCC;
+  }
+  
+  /* 클릭 시 생기는 active 스타일 제거 */
+  .react-calendar__tile:active {
+    border: 0.2px solid #CACBCC;
+    background: transparent;
+    box-shadow: none;
+  }
+  
+  /* focus 스타일 제거 */
+  .react-calendar__tile:focus {
+    border: 0.2px solid #CACBCC;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+  }  
+
+  .react-calendar__tile abbr {
+    color: #000;
+    font-family: "Pretendard Variable";
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    top: 4px;               
+    left: 4px; 
+    text-align: center;
+  }
+
+  .react-calendar__tile--now abbr{
+    color: #fff;
+    background-color: #80C5DA;
+    border-radius: 50%;
+    width: 14%;
+    height: 20%;
+  }
+
+  .custom-neighbor abbr{
+    color: #aaa !important;
+  }
+
+  .react-calendar__month-view__weekdays {
+    margin-bottom: 10px;
+    color: var(--Stroke, #80C5DA);
+    font-family: "Pretendard Variable";
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+
+  .react-calendar__navigation__arrow {
+    display: none !important;
+  }
+
+  .react-calendar__navigation {
+    width: max-content;
+    display: flex;
+    justify-content: flex-start !important;
+    padding-left: 1rem;
+  }
+
+  .react-calendar__navigation {
+    display: flex;
+    justify-content: flex-start;
+    padding-left: 1rem;
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+  
+  .react-calendar__navigation__label {
+    color: black;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: left;
+    cursor: default;
+    pointer-events: none;
+  }
+  
+  .react-calendar__navigation__label:hover,
+  .react-calendar__navigation__label:active,
+  .react-calendar__navigation__label:focus {
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    transform: none !important;
+    font-weight: 600 !important;
+  }
+  
