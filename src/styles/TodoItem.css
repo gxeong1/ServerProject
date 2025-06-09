@@ -1,0 +1,65 @@
+.todo-item {
+    font-family: "Pretendard Variable";
+    display: flex;
+    width: 200px;
+    padding: 5px 7px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  
+    border-radius: 5px;
+    background: var(--sub-red, linear-gradient(0deg, rgba(236, 156, 157, 0.30) 0%, rgba(236, 156, 157, 0.30) 100%), #FFF);
+    color: #000;
+    margin-bottom: 5px;
+  }
+  
+  .todo-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .todo-square {
+    all: unset;
+    display: inline-block;
+  
+    width: 8px;
+    height: 8px;
+    border: 1px solid var(--main-red, #EC9C9D);
+    border-radius: 1px;
+    background: transparent;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+  }
+  
+  .todo-square.filled {
+    background-color: var(--main-red, #EC9C9D);
+  }
+
+  .todo-square.filled:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  
+  .todo-text {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .todo-text.done {
+    text-decoration: none; /* 혹시 취소선 쓰고 싶으면 여기 바꾸면 됨 */
+  }
+  
+  .todo-date {
+    color: var(--main-red, #EC9C9D);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  

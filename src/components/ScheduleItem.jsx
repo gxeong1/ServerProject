@@ -1,13 +1,16 @@
 import React from 'react';
+import '../styles/ScheduleItem.css';
 
-const ScheduleItem = ({ text, date, color = 'purple' }) => {
+const ScheduleItem = ({ text, done, date, onToggle }) => {
   return (
-    <div className="flex justify-between items-center bg-purple-100 rounded-md px-3 py-1 my-1 text-sm">
-      <div className="flex items-center gap-2">
-        <span className="w-2 h-2 rounded-full bg-purple-400"></span>
-        <span>{text}</span>
+    <div className="schedule-item">
+      <div className="schedule-left">
+        <div
+          className='schedule-circle'
+        ></div>
+        <span className={`schedule-text ${done ? 'done' : ''}`}>{text}</span>
       </div>
-      <span className="text-purple-400">{date}</span>
+      <span className="schedule-date">{date}</span>
     </div>
   );
 };

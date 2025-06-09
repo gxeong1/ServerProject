@@ -1,0 +1,62 @@
+.schedule-item {
+    font-family: "Pretendard Variable";
+    display: flex;
+    width: 200px;
+    padding: 5px 7px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  
+    border-radius: 5px;
+    background: var(--sub-red, linear-gradient(0deg, rgba(236, 156, 157, 0.30) 0%, rgba(236, 156, 157, 0.30) 100%), #FFF);
+    color: #000;
+
+    margin-bottom: 5px;
+  }
+  
+  .schedule-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .schedule-circle {
+    width: 3px;
+    height: 3px;
+    border: 2px solid var(--main-red, #EC9C9D);
+    border-radius: 50%;
+    outline: none;
+    box-shadow: none;
+    background-color: var(--main-red, #EC9C9D);
+  }
+  
+  .schedule-circle:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .schedule-text {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .schedule-text.done {
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  
+  .schedule-date {
+    color: var(--main-red, #EC9C9D);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+  

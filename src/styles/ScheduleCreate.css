@@ -1,0 +1,108 @@
+.schedule-create-container {
+    display: inline-flex;
+    padding: 24px 34px 25px 31px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 11px;
+    font-family: "Pretendard Variable";
+
+    border-radius: 0px 50px 50px 50px;
+    border: 1px solid rgba(128, 197, 218, 0.70);
+    background: rgba(253, 254, 255, 0.90);
+  }
+  
+  .schedule-create-container h2 {
+    color: #000;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+  }
+  
+  .form-group {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .form-group label {
+    text-align: left;
+
+    color: #000;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+  
+  .form-group input,
+  .form-group select {
+    display: flex;
+    padding: 2px 95px 0px 1px;
+    align-items: center;
+
+    color: rgba(0, 0, 0, 100);
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    border: transparent;
+    border-bottom: 1px solid var(--Main, #9CD9EC);
+    background-color: transparent;
+
+    width: 300px;
+  }
+
+  .form-group input::placeholder,
+.form-group select::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 15px;
+  font-weight: 500;
+}
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+  }
+
+  .date_text{
+    margin-top: -20px !important;
+    color: rgba(0, 0, 0, 0.30) !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    line-height: normal !important;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .button-group button {
+    display: flex;
+    height: 27px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  
+    border-radius: 10px;
+    border: 1px solid var(--Stroke, #80C5DA);
+    background: var(--Main, #9CD9EC);
+  
+    color: #FFF;
+    font-family: "Pretendard Variable", sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    text-align: center;
+  
+    cursor: pointer;
+  }
+  
+  .button-group button:hover {
+    background-color: #80C5DA;
+  }
+  
