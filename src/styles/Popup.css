@@ -1,0 +1,7 @@
+.popup-position {
+    position: absolute;
+    top: 120%;         /* 버튼 아래 */
+    left: 0;          /* 오른쪽 정렬 */
+    z-index: 999;
+  }
+  

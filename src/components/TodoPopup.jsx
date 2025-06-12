@@ -1,9 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import CreateButton from './CreateButton';
-import ScheduleCreate from './ScheduleCreate';
 import '../styles/Popup.css';
+import TodoCreate from './TodoCreate';
 
-const Popup = ({ onSave, categories, setCategories }) => {
+const TodoPopup = ({ onSave, categories, setCategories }) => {
   const [showForm, setShowForm] = useState(false);
   const wrapperRef = useRef(null);
 
@@ -36,7 +36,7 @@ const Popup = ({ onSave, categories, setCategories }) => {
       <CreateButton onClick={() => setShowForm(true)} />
       {showForm && (
         <div className="popup-position">
-          <ScheduleCreate
+          <TodoCreate
             onSave={handleSave}
             categories={categories}
             setCategories={setCategories}
@@ -47,4 +47,4 @@ const Popup = ({ onSave, categories, setCategories }) => {
   );
 };
 
-export default Popup;
+export default TodoPopup;

@@ -9,3 +9,10 @@
     width: 10px;
     height: 10px;
 }
+
+.popup-position {
+    position: absolute;
+    top: 0;
+    right: 100%; /* 버튼의 오른쪽에 나타나도록 설정 */
+    margin-right: 10px; /* 버튼과의 간격 조정 */
+  }
