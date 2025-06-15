@@ -51,12 +51,15 @@ const Sidebar = ({ categories, setCategories, schedules, setSchedules, todos, se
     setSchedules((prev) => [
       ...prev,
       {
-        text: newSchedule.name,
+        id: Date.now(), // 고유 ID 생성
+        text: newSchedule.name, 
         done: false,
         date:
-          newSchedule.startDate === newSchedule.endDate
-            ? newSchedule.startDate
-            : `${newSchedule.startDate}~${newSchedule.endDate}`,
+        newSchedule.startDate === newSchedule.endDate
+          ? newSchedule.startDate
+          : `${newSchedule.startDate}~${newSchedule.endDate}`,
+        startDate: newSchedule.startDate,
+        endDate: newSchedule.endDate,
         category: newSchedule.category,
       },
     ]);
@@ -84,13 +87,13 @@ const Sidebar = ({ categories, setCategories, schedules, setSchedules, todos, se
         const categoryData = categories.find(c => c.name === schedule.category) || {};
         return (
           <ScheduleItem
-            key={`schedule-${index}`}
-            text={schedule.text}
-            done={schedule.done}
-            date={schedule.date}
-            categoryData={categoryData}
-            onToggle={() => toggleScheduleDone(index)}
-            onDelete={() => deleteSchedule(index)}
+          key={`schedule-${index}`}
+          name={schedule.text}
+          done={schedule.done}
+          date={schedule.date}
+          categoryData={categoryData}
+          onToggle={() => toggleScheduleDone(index)}
+          onDelete={() => deleteSchedule(index)}
           />
         );
       })}

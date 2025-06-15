@@ -23,7 +23,7 @@ const formatDateDisplay = (date) => {
   }
 };
 
-const ScheduleItem = ({ text, done, date, categoryData, onToggle, onDelete }) => {
+const ScheduleItem = ({ name, text, done, date, categoryData, onToggle, onDelete }) => {
   const bgColor = categoryData?.bgColor || '#fff';
   const circleColor = categoryData?.circleColor || '#333';
 
@@ -46,7 +46,7 @@ const ScheduleItem = ({ text, done, date, categoryData, onToggle, onDelete }) =>
     >
       <div className="schedule-left">
         <div className="schedule-circle" style={{ backgroundColor: circleColor }} />
-        <span className={`schedule-text ${done ? 'done' : ''}`}>{text}</span>
+        <span className={`schedule-text ${done ? 'done' : ''}`}>{name}</span>
       </div>
       <span className="schedule-date" style={{ color: circleColor }}>
         {formatDateDisplay(date)}

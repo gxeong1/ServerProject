@@ -35,7 +35,7 @@
 }
 
 .schedule-text {
-  color: #000;
+  color: #000 !important;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

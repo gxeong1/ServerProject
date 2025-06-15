@@ -5,7 +5,6 @@ import Popup from '../components/Popup';
 import predefinedColors from '../data/color';
 
 const MainPage = () => {
-  // 카테고리 상태 공유
   const [categories, setCategories] = useState([
     { name: '일반', ...predefinedColors[0] },
     { name: '업무', ...predefinedColors[1] },
@@ -13,19 +12,32 @@ const MainPage = () => {
     { name: '기타', ...predefinedColors[3] }
   ]);
 
-  // 일정 목록 상태
   const [schedules, setSchedules] = useState([
-    { text: '회의', done: false, date: '6/10', category: '업무' },
-    { text: '운동', done: false, date: '6/11~6/15', category: '개인' },
+    {
+      id: 1,
+      text: '회의',
+      done: false,
+      date: '6/10',
+      startDate: '20250610',
+      endDate: '20250610',
+      category: '업무'
+    },
+    {
+      id: 2,
+      text: '운동',
+      done: false,
+      date: '6/11~6/13',
+      startDate: '20250611',
+      endDate: '20250613',
+      category: '개인'
+    },
   ]);
 
-  // 할 일 목록 상태
   const [todos, setTodos] = useState([
     { text: '집', done: false, date: '5/12~5/24', category: '일반' },
     { text: '학원', done: false, date: '5/18', category: '기타' },
   ]);
 
-  // 일정 추가 핸들러
   const handleAddSchedule = (newSchedule) => {
     const formatDate = (dateString) => {
       const year = dateString.slice(0, 4);
@@ -43,22 +55,23 @@ const MainPage = () => {
         : `${formattedStart}~${formattedEnd}`;
 
     const scheduleItem = {
-      text: newSchedule.name,
+      id: Date.now(), // 고유 ID 부여
+      name: newSchedule.name,
       done: false,
       date: dateDisplay,
+      startDate: newSchedule.startDate,
+      endDate: newSchedule.endDate,
       category: newSchedule.category || '일반',
     };
 
     setSchedules(prev => [...prev, scheduleItem]);
 
-    // 새 카테고리가 없으면 자동 추가
     if (!categories.find(c => c.name === scheduleItem.category)) {
       const newCat = { name: scheduleItem.category, ...predefinedColors[0] };
       setCategories(prev => [...prev, newCat]);
     }
   };
 
-  // 할 일 추가 핸들러
   const handleAddTodo = (newTodo) => {
     const formatDate = (dateString) => {
       if (!/^\d{8}$/.test(dateString)) return dateString;
@@ -78,23 +91,20 @@ const MainPage = () => {
 
     setTodos(prev => [...prev, todoItem]);
 
-    // 새 카테고리 자동 추가
     if (!categories.find(c => c.name === todoItem.category)) {
-      const newCat = { name: todoItem.category, ...predefinedColors[0] };
+      const newCat = { name: newTodo.category, ...predefinedColors[0] };
       setCategories(prev => [...prev, newCat]);
     }
   };
 
   return (
     <div>
-      {/* 일정 생성 팝업 */}
       <Popup
         onSave={handleAddSchedule}
         categories={categories}
         setCategories={setCategories}
       />
 
-      {/* 사이드바에 할 일 추가 핸들러 전달 */}
       <Sidebar
         categories={categories}
         setCategories={setCategories}
@@ -105,8 +115,10 @@ const MainPage = () => {
         onAddTodo={handleAddTodo}
       />
 
-      {/* 캘린더 컴포넌트 */}
-      <CalendarComponents />
+      <CalendarComponents
+        schedules={schedules}
+        categories={categories}
+      />
     </div>
   );
 };

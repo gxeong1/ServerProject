@@ -15,10 +15,7 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={<HomePage />}
-        />
+        <Route path="/" element={<HomePage />} />
         <Route
           path="/main"
           element={

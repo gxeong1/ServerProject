@@ -18,7 +18,7 @@
     flex-shrink: 0;
 
     margin-top: 15px;
-    margin-bottom: 80px;
+    margin-bottom: 30px;
 }
 
 .schedule-container{
@@ -27,7 +27,7 @@
     align-items: flex-start;
     align-self: stretch;
 
-    height: 227px;
+    height: 210px;
 
     overflow-y: auto;  
 }
@@ -38,7 +38,7 @@
     align-items: flex-start;
     align-self: stretch;
 
-    height: 227px;
+    height: 210x;
 
     overflow-y: auto;  
 }

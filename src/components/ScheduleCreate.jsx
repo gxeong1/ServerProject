@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/ScheduleCreate.css';
 import CreateButton from './CreateButton';
 import CategoryCreatePopup from './CategoryCreatePopup';
 
@@ -11,19 +10,11 @@ const ScheduleCreate = ({ onSave, categories, setCategories }) => {
   const [memo, setMemo] = useState('');
   const [showPopup, setShowPopup] = useState(false);
 
-  // 카테고리 변경 감지 시 초기 선택값 동기화
   useEffect(() => {
     if (categories && categories.length > 0) {
       setCategory(categories[0].name);
     }
   }, [categories]);
-
-  const formatDate = (dateString) => {
-    const year = dateString.slice(0, 4);
-    const month = dateString.slice(4, 6);
-    const day = dateString.slice(6, 8);
-    return `${year}.${month}.${day}`;
-  };
 
   const handleSave = () => {
     const datePattern = /^\d{8}$/;
@@ -37,14 +28,13 @@ const ScheduleCreate = ({ onSave, categories, setCategories }) => {
     }
 
     const newSchedule = {
+      id: Date.now(),
       name,
       category,
       startDate,
       endDate,
       memo,
     };
-
-    console.log('저장할 일정:', newSchedule);
 
     if (onSave) {
       onSave(newSchedule);

@@ -1,0 +1,12 @@
+.calendar-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.schedule-overlay-item {
+  pointer-events: auto;
+}
